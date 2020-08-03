@@ -7,3 +7,5 @@ type Todo = {
 type toggleTodo = (selectedTodo: Todo) => void
 
 type addNewTodo = (newTodo: Todo) => void
+
+type deleteTodo = (id: number) => void

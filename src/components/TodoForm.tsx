@@ -1,11 +1,11 @@
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 
-interface TodoFormProps {
-  addNewTodo: addNewTodo
-}
+import { useTaskList } from '../context/TaskListContext';
 
-const TodoForm: React.FC<TodoFormProps> = ({ addNewTodo }) => {
+
+const TodoForm = () => {
   const [newTodo, setNewTodo] = useState('')
+  const { addNewTodo } = useTaskList()
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setNewTodo(e.target.value)

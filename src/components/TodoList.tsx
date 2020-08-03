@@ -1,18 +1,21 @@
 import React from 'react';
 
 import Todo from './Todo';
-
-interface TodoListProps {
-  todos: Array<Todo>
-  toggleTodo: toggleTodo
-}
+import { useTaskList } from '../context/TaskListContext';
 
 
-const TodoList: React.FC<TodoListProps> = ({ todos, toggleTodo }) => {
+const TodoList = () => {
+  const { todos, toggleTodo, deleteTodo } = useTaskList()
+
   return (
     <ul>
-      {todos.map((todo) => (
-        <Todo key={todo.id} todo={todo} toggleTodo={toggleTodo} />
+      {todos.map((todo: Todo) => (
+        <Todo
+          key={todo.id}
+          todo={todo}
+          toggleTodo={toggleTodo}
+          deleteTodo={deleteTodo}
+        />
       ))}
     </ul>
   )
