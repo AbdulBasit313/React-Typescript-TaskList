@@ -24,6 +24,7 @@ export const TaskListContext = createContext<TaskContextProps>({
   addNewTodo: () => { },
   deleteTodo: () => { }
 })
+
 // export const TaskListContext = createContext<TaskContextProps>({} as TaskContextProps)
 // export const TaskListContext = createContext<TaskContextProps | undefined>(undefined)
 // export const TaskListContext = createContext<Partial<TaskContextProps>>({})
