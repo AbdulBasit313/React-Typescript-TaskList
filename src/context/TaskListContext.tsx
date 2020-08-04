@@ -18,9 +18,15 @@ const initialTodos: Array<Todo> = [
   { id: 4, text: 'learn linux', completed: false },
 ]
 
-export const TaskListContext = createContext<TaskContextProps>({} as TaskContextProps)
-// export const TaskListContext = createContext<Partial<TaskContextProps>>({})
+export const TaskListContext = createContext<TaskContextProps>({
+  todos: [],
+  toggleTodo: () => { },
+  addNewTodo: () => { },
+  deleteTodo: () => { }
+})
+// export const TaskListContext = createContext<TaskContextProps>({} as TaskContextProps)
 // export const TaskListContext = createContext<TaskContextProps | undefined>(undefined)
+// export const TaskListContext = createContext<Partial<TaskContextProps>>({})
 
 export const useTaskList = () => useContext(TaskListContext)
 
