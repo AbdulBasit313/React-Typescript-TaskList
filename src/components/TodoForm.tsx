@@ -13,7 +13,9 @@ const TodoForm = () => {
 
   const handleSubmit = (e: FormEvent<HTMLButtonElement>) => {
     e.preventDefault()
-    const addTodo = { id: Math.random(), text: newTodo, completed: false }
+    const addTodo = {
+      id: Math.random(), text: newTodo, completed: false, isEditing: false
+    }
     if (newTodo.trim()) {
       addNewTodo(addTodo)
     }

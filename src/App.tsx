@@ -8,8 +8,10 @@ import './App.css';
 
 const App = () => (
   <TaskListContextProvider>
-    <TodoForm />
-    <TodoList />
+    <div className='center'>
+      <TodoForm />
+      <TodoList />
+    </div>
   </TaskListContextProvider>
 )
 
