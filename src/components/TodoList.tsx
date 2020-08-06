@@ -5,7 +5,9 @@ import { useTaskList } from '../context/TaskListContext';
 
 
 const TodoList = () => {
-  const { todos, toggleTodo, deleteTodo } = useTaskList()
+  const {
+    todos, toggleTodo, deleteTodo, editTodo, cancelEditing, saveEditing
+  } = useTaskList()
 
   return (
     <ul>
@@ -15,6 +17,9 @@ const TodoList = () => {
           todo={todo}
           toggleTodo={toggleTodo}
           deleteTodo={deleteTodo}
+          editTodo={editTodo}
+          cancelEditing={cancelEditing}
+          saveEditing={saveEditing}
         />
       ))}
     </ul>
