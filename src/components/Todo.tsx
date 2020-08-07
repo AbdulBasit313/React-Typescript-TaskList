@@ -36,7 +36,7 @@ const Todo: React.FC<TodoProps> = ({
 
   const cancelEditing = () => {
     setIsEdit(false)
-    setNewTodo(todo.text)
+    setNewTodo(text)
   }
 
   const handleMouseEnter = () => {
@@ -57,7 +57,7 @@ const Todo: React.FC<TodoProps> = ({
         </form>
         :
         <div
-          style={{ display: 'flex', justifyContent: 'center' }}
+          style={{ display: 'flex' }}
           onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}
         >
           <div>
