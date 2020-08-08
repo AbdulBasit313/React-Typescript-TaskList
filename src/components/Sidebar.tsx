@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import Modal from './Modal';
-
+import ProjectList from './ProjectList'
 
 const Sidebar = () => {
   const [modalOpen, setModalOpen] = useState(false)
@@ -21,12 +21,8 @@ const Sidebar = () => {
         <li>Projects
           <button onClick={handleToggle}>toogle</button>
           <button onClick={handleModal}>add</button>
-          <Modal modalOpen={modalOpen} />
-          {isToggle && (
-            <ul>
-              <li>Welcome</li>
-            </ul>
-          )}
+          <Modal modalOpen={modalOpen} handleModal={handleModal} />
+          {isToggle && <ProjectList />}
         </li>
         <li>Labels</li>
       </ul>

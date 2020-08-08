@@ -6,20 +6,23 @@ import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
 import TaskListContextProvider from './context/TaskListContext';
 import './App.css';
+import ProjectContextProvider from './context/ProjectContext';
 
 
 const App = () => (
   <TaskListContextProvider>
-    <Header />
-    <div style={{ display: 'flex' }}>
-      <div>
-        <Sidebar />
+    <ProjectContextProvider>
+      <Header />
+      <div style={{ display: 'flex' }}>
+        <div>
+          <Sidebar />
+        </div>
+        <div className='main'>
+          <TodoForm />
+          <TodoList />
+        </div>
       </div>
-      <div className='main'>
-        <TodoForm />
-        <TodoList />
-      </div>
-    </div>
+    </ProjectContextProvider>
   </TaskListContextProvider>
 )
 
