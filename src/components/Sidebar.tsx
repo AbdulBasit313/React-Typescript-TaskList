@@ -19,7 +19,7 @@ const Sidebar = () => {
     <div className='sidebar'>
       <ul>
         <li>Projects
-          <button onClick={handleToggle}>toogle</button>
+          <button onClick={handleToggle}>toggle</button>
           <button onClick={handleModal}>add</button>
           <Modal modalOpen={modalOpen} handleModal={handleModal} />
           {isToggle && <ProjectList />}

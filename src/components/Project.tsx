@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-
+import { Link } from 'react-router-dom';
 
 interface ProjectProps {
   project: Project
@@ -7,9 +7,11 @@ interface ProjectProps {
 
 const Project: FC<ProjectProps> = ({ project }) => {
   return (
-    <li>
-      {project.name}
-    </li>
+    <Link to={`/ + ${project.id}`}>
+      <li>
+        {project.name}
+      </li>
+    </Link>
   )
 }
 

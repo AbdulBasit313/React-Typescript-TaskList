@@ -2,13 +2,15 @@ import React, { ChangeEvent, useState, FormEvent } from 'react';
 
 interface TodoProps {
   todo: Todo
-  toggleTodo: toggleTodo
+  // toggleTodo: toggleTodo
   deleteTodo: deleteTodo
-  saveEditing: saveEditing
+  // saveEditing: saveEditing
 }
 
 const Todo: React.FC<TodoProps> = ({
-  todo, toggleTodo, deleteTodo, saveEditing }) => {
+  // todo, toggleTodo, deleteTodo, saveEditing
+  todo, deleteTodo
+}) => {
   const [newTodo, setNewTodo] = useState(todo.text)
   const [isEdit, setIsEdit] = useState(false)
   const [isHover, setIsHover] = useState(false)
@@ -21,13 +23,13 @@ const Todo: React.FC<TodoProps> = ({
 
   const handleSubmit = (e: FormEvent<HTMLButtonElement>) => {
     e.preventDefault()
-    if (newTodo.trim()) {
-      saveEditing(id, newTodo)
-      setIsEdit(false)
-    }
-    else {
-      alert('Todo can\'t be empty')
-    }
+    // if (newTodo.trim()) {
+    //   saveEditing(id, newTodo)
+    //   setIsEdit(false)
+    // }
+    // else {
+    //   alert('Todo can\'t be empty')
+    // }
   }
 
   const editTodo = () => {
@@ -65,13 +67,14 @@ const Todo: React.FC<TodoProps> = ({
               <input
                 type='checkbox'
                 checked={completed}
-                onChange={() => toggleTodo(todo)}
+              // onChange={() => toggleTodo(todo)}
               />
               {text}
             </label>
           </div>
           {isHover && <div>
-            <button onClick={editTodo}>Edit</button>
+            <button>Edit</button>
+            {/* <button onClick={editTodo}>Edit</button> */}
             <button onClick={() => deleteTodo(id)}>Delete</button>
           </div>
           }

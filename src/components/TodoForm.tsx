@@ -27,7 +27,11 @@ const TodoForm = () => {
 
   return (
     <form>
-      <input placeholder='your todo...' value={newTodo} onChange={handleChange} />
+      <input
+        placeholder='your todo...'
+        value={newTodo}
+        onChange={handleChange}
+      />
       <button onClick={handleSubmit}>Submit</button>
     </form>
   )
